@@ -20,4 +20,4 @@ Todo lo anterior se va a documentar en GitHub (en un README) y se publicara en P
 ### Capturas de pantalla del flujo completo funcionando:
 
 
-L#### Elaborado por: David Efraín José Ramos NL 19
+#### Elaborado por: David Efraín José Ramos NL 19
