@@ -159,7 +159,6 @@ function validarPassword(password){
 var password = "Hola12/";
 validarPassword(password);
 
-
 /*================================================================================================================================*/
 
 form.addEventListener('submit', (event) => {
