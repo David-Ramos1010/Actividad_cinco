@@ -275,6 +275,15 @@ background: var(--ink);
 	border-color: var(--coral); 
 }
 
+/*=================================================================*/
+.error-nombre-login { 
+	display: block; 
+	min-height: 0; 
+	margin-top: 5px; 
+	color: var(--coral-dark); 
+	font-size: 11px; 
+}
+
 .remember { 
 	position: relative; 
 	display: flex; 
