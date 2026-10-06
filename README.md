@@ -1,5 +1,6 @@
 1. Portada, nombre del proyecto, integrantes del equipo y descripción breve.
 2. Explicación y documentación: qué framework CSS usaron, cómo fluye el login hacia el sistema, cómo se pasa el nombre de usuario del login al navbar, cuáles son los métodos principales.
+
 3.Proceso de creación, paso a paso de cómo armaron el login, el sidebar, el navbar con el usuario, el número de control y el modal, con capturas.
 4. Capturas de pantalla del flujo completo funcionando.
 
