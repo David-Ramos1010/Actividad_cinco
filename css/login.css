@@ -60,7 +60,8 @@ body {
 	display: flex; 
 	align-items: flex-end; 
 	gap: 4px; 
-	margin-bottom: 38px; 
+	margin-bottom: 18px; 
+	margin-right: 10px;
 }
 
 /* ==============================================================*/ /*LAS TRES LINEAS DEL LOGO*/
@@ -85,6 +86,15 @@ background: var(--ink);
 /*=================================================================*/
 
 .eyebrow { 
+	margin: 0 0 15px; 
+	color: var(--coral-dark); 
+	font-size: 12px; 
+	font-weight: 700; 
+	letter-spacing: .14em; 
+	text-transform: uppercase; 
+}
+
+#eyebrow1 { 
 	margin: 0 0 15px; 
 	color: var(--coral-dark); 
 	font-size: 12px; 
@@ -156,12 +166,13 @@ background: var(--ink);
 	align-items: center; 
 	gap: 10px; 
 	font-family: "Space Grotesk", sans-serif; 
-	font-weight: 700; 
+	font-weight: 900; 
 }
 
 .mobile-brand 
 .brand-mark { 
 	margin: 0; 
+	maring-top: 10px;
 	transform: scale(.62); 
 	transform-origin: left center; 
 	width: 25px; 
