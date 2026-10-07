@@ -52,7 +52,7 @@ Así se ve en el panel izquierdo:
 
 Todo en conjunto en el panel izquierdo se ve así:
 
-![Panel izquierdo](img/imagen3.png)
+![Panel izquierdo](img/Imagen3.png)
 
 Ahora vamos con el panel derecho:
 
