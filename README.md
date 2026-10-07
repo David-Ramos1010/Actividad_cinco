@@ -48,7 +48,7 @@ Con este otro div pusimos una pequeña señal:
 
 Así se ve en el panel izquierdo:
 
-![xd](img/img2.png)
+![xd](img/Img2.png)
 
 Todo en conjunto en el panel izquierdo se ve así:
 
