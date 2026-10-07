@@ -56,7 +56,7 @@ Todo en conjunto en el panel izquierdo se ve así:
 
 Ahora vamos con el panel derecho:
 
-![Panel derecho](img/imagen4.png)
+![Panel derecho](img/Imagen4.png)
 
 Este tiene un pequeño logo el cual al inicio no funcionaba porque estaba muy desfazado. 
 
@@ -79,7 +79,7 @@ La siguiente parte es crucial ya que envía una verificación para saber qué in
 Como se puede mostrar son dos botones los cuales tienen estilos y muestra diferente información.
 Se ven de la siguiente manera:
 
-![Panel derecho](img/imagen6.png)
+![Panel derecho](img/Imagen6.png)
 
 La siguiente parte es el formulario que cuenta con tres conjuntos como de cuadros de texto para enviar la información a un js y ejecutar funciones:
 
@@ -87,11 +87,11 @@ La siguiente parte es el formulario que cuenta con tres conjuntos como de cuadro
 
 Es importante mencionar que en el apartado de contraseña declare un hipervínculo que simula la situación de cuando alguien olvida su contraseña.
 
-![Panel derecho](img/imagen7.png)
+![Panel derecho](img/Imagen7.png)
 
 Abajo solo le añadí un texto con dos hipervínculos.
 
-![Panel derecho](img/imagen8.png)
+![Panel derecho](img/Imagen8.png)
 
 La otra parte crucial de lo que yo hice fueron las validaciones en JavaScript. Me encargue de validar que el correo electrónico fuera correcto, que la contraseña tuviera máximo ocho caracteres con al menos un carácter especial y que en el nombre no pudiera meter números. Igual desde el JavaScript hice el cambio dinámico entre registrarse e iniciar sesión.
 
@@ -110,11 +110,11 @@ La siguiente parte del código es la que se encarga de validar los datos dados d
 
 Se ve de la siguiente manera:
 
-![General](img/imagen9.png)
+![General](img/Imagen9.png)
 
 Por último, cree un nabar en el index. Apenas lo modificare:
 
-![General](img/imagen10.png)
+![General](img/Imagen10.png)
 
 Esta parte fue declarada de la siguiente manera y fue modificada desde la hoja de estilos:
 
