@@ -191,9 +191,21 @@ form.addEventListener('submit', (event) => {
 	else if (!validarPassword(passwordValue))
 		setError(passwordInput, 'Mínimo 8 caracteres, una mayúscula, un número y un carácter especial.');
 
+	/* ========================================================================== */
+	/* AGREGADO POR JORDI: Guardar sesión y redirigir al sistema (index.html)    */
+	/* ========================================================================== */
 	if (valid) {
 		formStatus.style.color = 'green';
-		formStatus.textContent = mode === 'register' ? 'Cuenta creada. Ya puedes comenzar.' : 'Sesión iniciada correctamente.';
+		formStatus.textContent = mode === 'register' ? 'Cuenta creada. Entrando...' : 'Sesión iniciada. Redirigiendo...';
+
+		// 1. Guardar el nombre/correo en el almacenamiento de la sesión
+		const usuarioRegistrado = (mode === 'register' && nameInput.value.trim()) ? nameInput.value.trim() : emailValue;
+		sessionStorage.setItem('usuarioActivo', usuarioRegistrado);
+
+		// 2. Redirigir a la pantalla principal (index.html) tras un breve retardo
+		setTimeout(() => {
+			window.location.href = 'index.html';
+		}, 800);
 	} else {
 		formStatus.style.color = '#c00';
 		formStatus.textContent = 'Revisa los campos marcados en rojo.';
