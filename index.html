@@ -28,8 +28,11 @@
 
 	<body>
 		<div class="page-shell">
+			<!-- Navbar de David con agregados de Jordi -->
 			<header class="topbar">
 				<div class="brand-wrap">
+					<!-- Botón Hamburguesa -->
+					<button id="sidebarToggleBtn" class="hamburger-btn" aria-label="Abrir menú">☰</button>
 					<div class="brand-badge">DR</div>
 					<div>
 						<p class="brand-name">David Ramos</p>
@@ -44,11 +47,99 @@
 					<a href="#">Notificaciones</a>
 				</nav>
 				
-				<form action="login.html">
-					<button class="cta-button">Login</button>
-				</form>
-				
+				<!-- Menú Desplegable con Usuario y Opción de Salir -->
+				<div class="user-dropdown-wrap">
+					<button id="userDropdownBtn" class="user-nav-btn">
+						<span id="navUserName">Usuario</span>
+						<small>▼</small>
+					</button>
+					<div id="userDropdownMenu" class="user-dropdown-menu">
+						<a href="#" id="logoutBtn">Salir del sistema</a>
+					</div>
+				</div>
 			</header>
+
+			<!-- Estructura del Sistema: Sidebar + Formulario de Captura -->
+			<div class="layout-body">
+				<!-- Sidebar (Menú Lateral) -->
+				<aside id="sidebar" class="sidebar">
+					<div class="sidebar-header">
+						<h3>Navegación</h3>
+					</div>
+					<ul class="sidebar-menu">
+						<li class="menu-item has-submenu">
+							<button class="submenu-toggle">
+								<span>👥 Usuarios</span>
+								<span class="arrow">▼</span>
+							</button>
+							<ul class="submenu">
+								<li><a href="#seccionCaptura" class="active">Captura</a></li>
+							</ul>
+						</li>
+					</ul>
+				</aside>
+
+				<!-- Contenido Principal -->
+				<main class="main-content">
+					<section id="seccionCaptura" class="content-card">
+						<h2>Captura de Alumnos</h2>
+						<p class="section-desc">Ingresa los datos del alumno para la validación y verificación de edad.</p>
+
+						<form id="capturaForm" novalidate>
+							<div class="field">
+								<label for="capturaUser">Nombre de usuario</label>
+								<input type="text" id="capturaUser" placeholder="Nombre completo" required>
+								<small class="error-message" id="err-capturaUser"></small>
+							</div>
+
+							<div class="field">
+								<label for="capturaEmail">Correo electrónico</label>
+								<input type="email" id="capturaEmail" placeholder="correo@ejemplo.com" required>
+								<small class="error-message" id="err-capturaEmail"></small>
+							</div>
+
+							<div class="field">
+								<label for="capturaPassword">Contraseña</label>
+								<input type="password" id="capturaPassword" placeholder="Mínimo 8 caracteres, 1 mayúscula, 1 número y 1 especial" required>
+								<small class="error-message" id="err-capturaPassword"></small>
+							</div>
+
+							<div class="field">
+								<label for="capturaNumControl">Número de control (8 dígitos)</label>
+								<input type="text" id="capturaNumControl" maxlength="8" placeholder="Ej. 123456" required>
+								<small class="error-message" id="err-capturaNumControl"></small>
+							</div>
+
+							<div class="field">
+								<label for="capturaEdad">Edad</label>
+								<input type="number" id="capturaEdad" placeholder="Ej. 19" min="1" max="120" required>
+								<small class="error-message" id="err-capturaEdad"></small>
+							</div>
+
+							<button type="submit" class="submit-button">
+								<span>Guardar Alumno</span>
+								<span aria-hidden="true">↗</span>
+							</button>
+						</form>
+					</section>
+				</main>
+			</div>
 		</div>
+
+		<!-- Modal de Edad -->
+		<div id="edadModal" class="modal-backdrop">
+			<div class="modal-box">
+				<div class="modal-header">
+					<h3 id="modalTitle">Verificación de Edad</h3>
+					<button id="closeModalBtn" class="modal-close">&times;</button>
+				</div>
+				<div class="modal-body" id="modalBody"></div>
+				<div class="modal-footer">
+					<button id="acceptModalBtn" class="submit-button">Aceptar</button>
+				</div>
+			</div>
+		</div>
+
+		<script src="js/login.js"></script>
 	</body>
 </html>
