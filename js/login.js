@@ -207,3 +207,167 @@ form.addEventListener('submit', (event) => {
 		formStatus.textContent = 'Revisa los campos marcados en rojo.';
 	}
 });
+
+/* ==========================================================================
+   Agregado de Jordi: Llogica de index.html (Sidebar, Navbar, Captura y Modal)
+   ========================================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+
+    // Comprobar si estamos en la pantalla index.html
+    const navUserName = document.getElementById('navUserName');
+    const capturaForm = document.getElementById('capturaForm');
+
+    if (navUserName || capturaForm) {
+
+        // 1. Protección de ruta y carga de usuario en Navbar
+        const sessionData = sessionStorage.getItem('usuarioLogueado');
+        if (!sessionData) {
+            window.location.href = 'login.html';
+            return;
+        }
+
+        const usuario = JSON.parse(sessionData);
+        if (navUserName) {
+            navUserName.textContent = usuario.nombre || usuario.email;
+        }
+
+        // 2. Navbar: Dropdown de Usuario y Salir del Sistema
+        const userDropdownBtn = document.getElementById('userDropdownBtn');
+        const userDropdownMenu = document.getElementById('userDropdownMenu');
+        const logoutBtn = document.getElementById('logoutBtn');
+
+        if (userDropdownBtn && userDropdownMenu) {
+            userDropdownBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                userDropdownMenu.classList.toggle('is-visible');
+            });
+
+            document.addEventListener('click', () => {
+                userDropdownMenu.classList.remove('is-visible');
+            });
+        }
+
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                sessionStorage.removeItem('usuarioLogueado');
+                window.location.href = 'login.html';
+            });
+        }
+
+        // 3. Sidebar y Botón Hamburguesa
+        const sidebarToggleBtn = document.getElementById('sidebarToggleBtn');
+        const sidebar = document.getElementById('sidebar');
+
+        if (sidebarToggleBtn && sidebar) {
+            sidebarToggleBtn.addEventListener('click', () => {
+                sidebar.classList.toggle('is-open');
+            });
+        }
+
+        // Submenú en Sidebar (Usuarios -> Captura)
+        const submenuToggles = document.querySelectorAll('.submenu-toggle');
+        submenuToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const parent = toggle.closest('.has-submenu');
+                if (parent) parent.classList.toggle('is-active');
+            });
+        });
+
+        // 4. Formulario Captura de Alumnos y Validaciones
+        if (capturaForm) {
+            capturaForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                // Limpiar errores previos
+                document.querySelectorAll('#capturaForm .field').forEach(f => f.classList.remove('has-error'));
+                document.querySelectorAll('#capturaForm .error-message').forEach(m => m.textContent = '');
+
+                const username = document.getElementById('capturaUser').value.trim();
+                const email = document.getElementById('capturaEmail').value.trim();
+                const password = document.getElementById('capturaPassword').value;
+                const numControl = document.getElementById('capturaNumControl').value.trim();
+                const edadVal = document.getElementById('capturaEdad').value.trim();
+                const edad = parseInt(edadVal, 10);
+
+                let isValid = true;
+
+                const setError = (inputId, errId, message) => {
+                    const input = document.getElementById(inputId);
+                    const errSpan = document.getElementById(errId);
+                    if (input && errSpan) {
+                        input.closest('.field').classList.add('has-error');
+                        errSpan.textContent = message;
+                    }
+                    isValid = false;
+                };
+
+                // Validar Usuario
+                if (!username) setError('capturaUser', 'err-capturaUser', 'Ingresa el nombre de usuario.');
+
+                // Validar Email (usando validarEmail de David)
+                if (!email) {
+                    setError('capturaEmail', 'err-capturaEmail', 'Ingresa el correo electrónico.');
+                } else if (typeof validarEmail === 'function' && !validarEmail(email)) {
+                    setError('capturaEmail', 'err-capturaEmail', 'Formato de correo inválido.');
+                }
+
+                // Validar Contraseña (usando validarPassword de David)
+                if (!password) {
+                    setError('capturaPassword', 'err-capturaPassword', 'Ingresa la contraseña.');
+                } else if (typeof validarPassword === 'function' && !validarPassword(password)) {
+                    setError('capturaPassword', 'err-capturaPassword', 'Debe tener mínimo 8 caracteres, 1 mayúscula, 1 número y 1 especial.');
+                }
+
+                // Validar Número de Control (Exactamente 8 dígitos)
+                const regexNumControl = /^\d{8}$/;
+                if (!numControl) {
+                    setError('capturaNumControl', 'err-capturaNumControl', 'Ingresa el número de control.');
+                } else if (!regexNumControl.test(numControl)) {
+                    setError('capturaNumControl', 'err-capturaNumControl', 'El número de control debe tener exactamente 6 dígitos numéricos.');
+                }
+
+                // Validar Edad
+                if (!edadVal || isNaN(edad) || edad <= 0) {
+                    setError('capturaEdad', 'err-capturaEdad', 'Ingresa una edad válida.');
+                }
+
+                // Si todo es válido, desplegar Modal de Edad
+                if (isValid) {
+                    openEdadModal(username, edad);
+                }
+            });
+        }
+
+        // 5. Modal de Edad
+        const edadModal = document.getElementById('edadModal');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const acceptModalBtn = document.getElementById('acceptModalBtn');
+        const modalBody = document.getElementById('modalBody');
+
+        function openEdadModal(nombre, edad) {
+            if (!edadModal || !modalBody) return;
+            const esMayor = edad >= 18;
+            modalBody.innerHTML = `
+                <p><strong>Alumno:</strong> ${nombre}</p>
+                <p><strong>Edad:</strong> ${edad} años</p>
+                <div class="status-badge ${esMayor ? 'is-success' : 'is-warning'}">
+                    ${esMayor ? '✔ El alumno es <strong>MAYOR DE EDAD</strong>.' : '⚠ El alumno es <strong>MENOR DE EDAD</strong>.'}
+                </div>
+            `;
+            edadModal.classList.add('is-open');
+        }
+
+        function closeModal() {
+            if (edadModal) edadModal.classList.remove('is-open');
+        }
+
+        if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+        if (acceptModalBtn) acceptModalBtn.addEventListener('click', closeModal);
+        if (edadModal) {
+            edadModal.addEventListener('click', (e) => {
+                if (e.target === edadModal) closeModal();
+            });
+        }
+    }
+});
