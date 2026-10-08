@@ -122,9 +122,48 @@ Esta parte fue declarada de la siguiente manera y fue modificada desde la hoja d
 
 
 #### Creación del sidebar (con capturas):
+Código HTML y CSS del Sidebar:
+   
+   Se definió una estructura con la clase .has-submenu para albergar el menú de Usuarios y la opción Captura. En el archivo login.css se agregaron los estilos para controlar su posición y animación.
+   ![Código HTML y CSS del Sidebar](img/codigo_sidebar.png)
+
+Lógica de control en JavaScript:
+   
+   Se vinculó el botón hamburguesa (#sidebarToggleBtn) con un controlador de eventos que alterna la clase .is-closed sobre el elemento #sidebar.
+   ![Código JS del Sidebar](img/codigo_js_sidebar.png)
+
+Resultado en la interfaz:
+   
+   Al hacer clic en el botón hamburguesa se despliega el menú lateral con la opción para navegar a la sección de Captura.
+   
+   ![Sidebar Desplegado](img/sidebar_interfaz.png)
+
 #### Creación del navar con el usuario, el número de control y el modal (con capturas):
- 
+Navbar con Usuario y Cierre de Sesión:
+   
+   Código JS: Al cargar la página se lee sessionStorage y se escribe el nombre en #navUserName. Al presionar el botón de cerrar sesión, se ejecuta sessionStorage.removeItem('usuarioLogueado') y se redirige a login.html.
+
+![Interfaz Formulario Captura](img/formulario_interfaz.png)
+
+Interfaz visual: 
+    
+Despliegue del menú flotante al hacer clic en el nombre de usuario.
+
+![Navbar Usuario Dropdown](img/navbar_interfaz.png)
+
+Formulario de Alumnos y Validación de Número de Control:
+
+   Código HTML y JS: Se estableció el campo de número de control con maxlength="6". En JavaScript se evalúa mediante la expresión regular /^\d{6}$/.
+
+![Código Formulario y Validacion](img/codigo_num_control.png)
+    
+   Interfaz visual: Captura de pantalla mostrando la validación de los 6 dígitos numéricos.
+
+![Interfaz Formulario Captura](img/formulario_interfaz.png)
+
+
 ### Capturas de pantalla del flujo completo funcionando:
 
 
 #### Elaborado por: David Efraín José Ramos NL 19
+#### Elaborado por: Jordi Moisés Alvaréz Mora NL 2
