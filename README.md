@@ -163,7 +163,23 @@ Formulario de Alumnos y Validación de Número de Control:
 
 
 ### Capturas de pantalla del flujo completo funcionando:
+1.- Pantalla de Login con validaciones de correo y contraseña:
+![Flujo Login](img/flujo1.png)
 
+2.- Redirección e ingreso exitoso a index.html reflejando el usuario en el Navbar:
+   ![Flujo Index Navbar](img/flujo2.png)
+
+3.- Apertura del Sidebar mediante el botón hamburguesa y navegación a Captura:
+   ![Flujo Sidebar Submenu](img/flujo3.png)
+
+4.- Validación del formulario de alumnos (comprobando los datos introducidos en el formulario):
+   ![Flujo Validación Captura](img/flujo4.png)
+
+5.- Despliegue del Modal interactivo con el resultado de verificación de edad:
+   ![Flujo Modal Resultado](img/flujo5_modal.png)
+
+6.- Cierre de sesión desde el menú del usuario y regreso automático a login.html:
+   ![Flujo Logout](img/flujo6_logout.png)
 
 #### Elaborado por: David Efraín José Ramos NL 19
 #### Elaborado por: Jordi Moisés Alvaréz Mora NL 2
