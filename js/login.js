@@ -323,8 +323,8 @@ document.addEventListener('DOMContentLoaded', () => {
 					setError('capturaPassword', 'err-capturaPassword', 'Debe tener mínimo 8 caracteres, 1 mayúscula, 1 número y 1 especial.');
 				}
 
-				// Validar Número de Control (Exactamente 8 dígitos)
-				const regexNumControl = /^\d{8}$/;
+				// Validar Número de Control (Exactamente 6 dígitos)
+				const regexNumControl = /^\d{6}$/;
 				if (!numControl) {
 					setError('capturaNumControl', 'err-capturaNumControl', 'Ingresa el número de control.');
 				} else if (!regexNumControl.test(numControl)) {
