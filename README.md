@@ -125,7 +125,7 @@ Esta parte fue declarada de la siguiente manera y fue modificada desde la hoja d
 Código HTML y CSS del Sidebar:
    
    Se definió una estructura con la clase .has-submenu para albergar el menú de Usuarios y la opción Captura. En el archivo login.css se agregaron los estilos para controlar su posición y animación.
-   ![Código HTML y CSS del Sidebar](img/codigo_sidebar.png)
+   ![Código HTML y CSS del Sidebar](img/codigo_sidebar.PNG)
 
 Lógica de control en JavaScript:
    
@@ -136,30 +136,30 @@ Resultado en la interfaz:
    
    Al hacer clic en el botón hamburguesa se despliega el menú lateral con la opción para navegar a la sección de Captura.
    
-   ![Sidebar Desplegado](img/sidebar_interfaz.png)
+   ![Sidebar Desplegado](img/sidebar_interfaz.PNG)
 
 #### Creación del navar con el usuario, el número de control y el modal (con capturas):
 Navbar con Usuario y Cierre de Sesión:
    
    Código JS: Al cargar la página se lee sessionStorage y se escribe el nombre en #navUserName. Al presionar el botón de cerrar sesión, se ejecuta sessionStorage.removeItem('usuarioLogueado') y se redirige a login.html.
 
-![Interfaz Formulario Captura](img/formulario_interfaz.png)
+![Interfaz Formulario Captura](img/formulario_interfaz.PNG)
 
 Interfaz visual: 
     
 Despliegue del menú flotante al hacer clic en el nombre de usuario.
 
-![Navbar Usuario Dropdown](img/navbar_interfaz.png)
+![Navbar Usuario Dropdown](img/navbar_interfaz.PNG)
 
 Formulario de Alumnos y Validación de Número de Control:
 
    Código HTML y JS: Se estableció el campo de número de control con maxlength="6". En JavaScript se evalúa mediante la expresión regular /^\d{6}$/.
 
-![Código Formulario y Validacion](img/codigo_num_control.png)
+![Código Formulario y Validacion](img/codigo_num_control.PNG)
     
    Interfaz visual: Captura de pantalla mostrando la validación de los 6 dígitos numéricos.
 
-![Interfaz Formulario Captura](img/formulario_interfaz.png)
+![Interfaz Formulario Captura](img/formulario_interfaz.PNG)
 
 
 ### Capturas de pantalla del flujo completo funcionando:
@@ -167,19 +167,19 @@ Formulario de Alumnos y Validación de Número de Control:
 ![Flujo Login](img/flujo1.PNG)
 
 2.- Redirección e ingreso exitoso a index.html reflejando el usuario en el Navbar:
-   ![Flujo Index Navbar](img/flujo2.png)
+   ![Flujo Index Navbar](img/flujo2.PNG)
 
 3.- Apertura del Sidebar mediante el botón hamburguesa y navegación a Captura:
-   ![Flujo Sidebar Submenu](img/flujo3.png)
+   ![Flujo Sidebar Submenu](img/flujo3.PNG)
 
 4.- Validación del formulario de alumnos (comprobando los datos introducidos en el formulario):
-   ![Flujo Validación Captura](img/flujo4.png)
+   ![Flujo Validación Captura](img/flujo4.PNG)
 
 5.- Despliegue del Modal interactivo con el resultado de verificación de edad:
-   ![Flujo Modal Resultado](img/flujo5_modal.png)
+   ![Flujo Modal Resultado](img/flujo5_modal.PNG)
 
 6.- Cierre de sesión desde el menú del usuario y regreso automático a login.html:
-   ![Flujo Logout](img/flujo6_logout.png)
+   ![Flujo Logout](img/flujo6_logout.PNG)
 
 #### Elaborado por: David Efraín José Ramos NL 19
 #### Elaborado por: Jordi Moisés Alvaréz Mora NL 2
