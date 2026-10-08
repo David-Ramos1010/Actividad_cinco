@@ -465,7 +465,7 @@ background: var(--ink);
 }
 
 /* ===================================================
-   ESTILOS AGREGADOS POR JORDI PARA INDEX.HTML
+   Estilos agregados para el index.html por Jordi
    =================================================== */
 
 .hamburger-btn {
@@ -617,3 +617,14 @@ background: var(--ink);
 .status-badge.is-success { background: #d1e7dd; color: #0f5132; }
 .status-badge.is-warning { background: #fff3cd; color: #664d03; }
 .modal-footer { text-align: right; }
+
+/* ===================================================
+   Correccion de visibilidad
+   =================================================== */
+.user-dropdown-menu.is-visible {
+	display: block !important;
+}
+
+.sidebar.is-closed {
+	display: none !important;
+}
