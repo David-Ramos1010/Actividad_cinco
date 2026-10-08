@@ -164,7 +164,7 @@ Formulario de Alumnos y Validación de Número de Control:
 
 ### Capturas de pantalla del flujo completo funcionando:
 1.- Pantalla de Login con validaciones de correo y contraseña:
-![Flujo Login](img/flujo1.png)
+![Flujo Login](img/flujo1.PNG)
 
 2.- Redirección e ingreso exitoso a index.html reflejando el usuario en el Navbar:
    ![Flujo Index Navbar](img/flujo2.png)
