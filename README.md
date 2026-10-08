@@ -176,10 +176,10 @@ Formulario de Alumnos y Validación de Número de Control:
    ![Flujo Validación Captura](img/flujo4.PNG)
 
 5.- Despliegue del Modal interactivo con el resultado de verificación de edad:
-   ![Flujo Modal Resultado](img/flujo5_modal.PNG)
+   ![Flujo Modal Resultado](img/flujo5.png)
 
 6.- Cierre de sesión desde el menú del usuario y regreso automático a login.html:
-   ![Flujo Logout](img/flujo6_logout.PNG)
+   ![Flujo Logout](img/flujo6.png)
 
 #### Elaborado por: David Efraín José Ramos NL 19
 #### Elaborado por: Jordi Moisés Alvaréz Mora NL 2
