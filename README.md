@@ -179,7 +179,7 @@ Formulario de Alumnos y Validación de Número de Control:
    ![Flujo Modal Resultado](img/flujo5.png)
 
 6.- Cierre de sesión desde el menú del usuario y regreso automático a login.html:
-   ![Flujo Logout](img/flujo6.png)
+   ![Flujo Logout](img/flujo6.PNG)
 
 #### Elaborado por: David Efraín José Ramos NL 19
 #### Elaborado por: Jordi Moisés Alvaréz Mora NL 2
